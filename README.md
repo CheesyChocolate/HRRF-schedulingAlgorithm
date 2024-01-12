@@ -1,2 +1,3 @@
-# Python_Template
-a project template for python
+# HRRF-schedulingAlgorithm
+
+A sinmple implementation of HRRF scheduling algorithm in python.
