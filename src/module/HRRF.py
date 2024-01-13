@@ -4,6 +4,7 @@ def hrrf_scheduler(tasks):
 
     while tasks:
         response_ratios = [(i, (current_time - arrival_time + burst_time) / burst_time) for i, (_, arrival_time, burst_time) in enumerate(tasks)]
+
         # Sort tasks based on response ratio (higher first)
         response_ratios.sort(key=lambda x: x[1], reverse=True)
 
