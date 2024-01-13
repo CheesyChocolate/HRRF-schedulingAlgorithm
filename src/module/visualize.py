@@ -6,6 +6,8 @@ def print_schedule(tasks_list):
     for task in tasks_list:
         print(f"Task: {task[0]}, Arrival Time: {task[1]}, Burst Time: {task[2]}, Waiting Time: {task[3]}, Completion Time: {task[4]}")
 
+    print(f"Average Waiting Time: {sum([task[3] for task in tasks_list]) / len(tasks_list)}")
+
 
 def visualize_schedule(tasks):
     fig, ax = plt.subplots()
@@ -27,7 +29,8 @@ def visualize_schedule(tasks):
 
     ax.set_xlabel('Time')
     ax.set_ylabel('Tasks')
-    ax.set_title('Task Schedule Visualization')
+    ax.set_title('Task Schedule Visualization\nAverage Waiting Time: {:.2f}'.format(
+        sum([task[3] for task in tasks]) / len(tasks)))
     ax.legend()
 
     plt.show()
